@@ -18,6 +18,8 @@ let isSync = process.argv.indexOf('--unsync') !== -1;
 let isProd = !isDev;
 
 let jsFiles = [
+   './src/js/jquery-3.2.1.slim.min.js',
+   './src/js/slick.min.js',
    './src/js/main.js'
 ]
 

@@ -1,0 +1,19 @@
+.features
+   position: absolute
+   background-color: rgba(27, 35, 44, 0.7)
+   bottom: 0
+   left: 0
+   width: 100%
+   &__list
+      +row-flex()
+      justify-content: space-between
+      padding: 40px 0
+   &__item
+      +col()
+      +size(2)
+   &__text
+      color: #ffffff
+      +ubuntu-bold
+      font-size: 16px
+      letter-spacing: -0.64px
+      text-align: center
