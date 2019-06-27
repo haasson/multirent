@@ -18,7 +18,6 @@ let isSync = process.argv.indexOf('--unsync') !== -1;
 let isProd = !isDev;
 
 let jsFiles = [
-   './src/js/lib.js',
    './src/js/main.js'
 ]
 
@@ -40,11 +39,17 @@ function styles() {
 }
 
 function img() {
-   return gulp.src('./src/img/*')
+   return gulp.src('./src/img/**/*')
               .pipe(gulpif(isProd, tinypng({
                   key: 'ILGj6BYXCPvw7nOQJ2KZ3ufdgWdDQ3NS',
                })))
               .pipe(gulp.dest('./build/img'))
+              .pipe(gulpif(!isSync, browserSync.stream()));
+}
+
+function fonts() {
+   return gulp.src('./src/fonts/*')
+              .pipe(gulp.dest('./build/fonts'))
               .pipe(gulpif(!isSync, browserSync.stream()));
 }
 
@@ -57,7 +62,7 @@ function html() {
 function scripts() {
    return gulp.src(jsFiles)
               .pipe(gulpif(isDev, sourcemaps.init()))
-              .pipe(concat('all.js'))
+              .pipe(concat('main.js'))
               .pipe(babel({
                   presets: ['@babel/env']
                }))
@@ -86,10 +91,11 @@ function watch() {
       })
    }
 
-   gulp.watch('./src/sass/*.sass', styles);
+   gulp.watch('./src/sass/**/*.sass', styles);
    gulp.watch('./src/img/*', img);
    gulp.watch('./src/js/**/*.js', scripts);
    gulp.watch('./src/*.html', html);
+   gulp.watch('./src/fonts/**/*', fonts);
    gulp.watch('./src/smartgrid.js', grid);
 }
 
@@ -99,7 +105,7 @@ function clean() {
 
 let build = gulp.series(
    clean, 
-   gulp.parallel(styles, img, scripts, html)
+   gulp.parallel(styles, img, scripts, html, fonts)
 )
    
 gulp.task('del', clean);

@@ -1,0 +1,32 @@
+@font-face {
+   font-family: 'Ubuntu Bold';
+   src: url('../fonts/Ubuntu-Bold.woff') format('woff');
+   font-weight: normal;
+   font-style: normal;
+}
+
+@font-face {
+   font-family: 'Roboto Condensed Bold';
+   src: url('../fonts/RobotoCondensed-Bold.woff') format('woff');
+   font-weight: normal;
+   font-style: normal;
+}
+
+@font-face {
+   font-family: 'Ubuntu Regular';
+   src: url('../fonts/Ubuntu-Regular.woff') format('woff');
+   font-weight: normal;
+   font-style: normal;
+}
+
+@mixin ubuntu {
+   font-family: 'Ubuntu Regular', sans-serif;
+}
+
+@mixin ubuntu-bold {
+   font-family: 'Ubuntu Bold', sans-serif;
+}
+
+@mixin roboto-c-bold {
+   font-family: 'Roboto Condensed Bold', sans-serif;
+}
