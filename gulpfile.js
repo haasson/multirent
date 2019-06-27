@@ -69,7 +69,7 @@ function scripts() {
               .pipe(uglify({
                  toplevel: true
               }))
-              .pipe(gulpif(isDev, sourcemaps.write()))
+              .pipe(gulpif(isDev, sourcemaps.write('./maps/')))
               .pipe(gulp.dest('./build/js'))
               .pipe(gulpif(!isSync, browserSync.stream()));
 }
@@ -92,7 +92,7 @@ function watch() {
    }
 
    gulp.watch('./src/sass/**/*.sass', styles);
-   gulp.watch('./src/img/*', img);
+   gulp.watch('./src/img/**/*', img);
    gulp.watch('./src/js/**/*.js', scripts);
    gulp.watch('./src/*.html', html);
    gulp.watch('./src/fonts/**/*', fonts);

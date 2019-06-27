@@ -1,0 +1,270 @@
+.header
+   background-color: #fff
+   &__top
+      position: relative
+      display: flex
+      justify-content: space-between
+      align-items: center
+      padding: 20px 0
+   &__logo
+      margin-right: 175px
+   &__contact
+      display: none
+   &__subtext
+      color: #d1d2d3
+      +ubuntu
+      font-size: 13px
+      text-align: right
+      margin: 0 
+
+
+
+.menu
+   display: flex
+   justify-content: space-between
+   align-items: center
+   width: 100%
+
+   &__item
+      display: inline-block
+      color: #656673
+      +ubuntu-bold
+      font-size: 16px
+      text-transform: uppercase
+      transition: 0.3s
+      &:hover
+         color: $accent
+         transition: 0.2s
+
+      &_select
+         padding: 23px 0
+         position: relative
+         padding-right: 30px
+         &:after
+            $size: 7px
+            +pseudo
+            width: $size
+            height: $size
+            bottom: 29px
+            right: 9px
+            border-bottom: 2px solid $accent
+            border-right: 2px solid $accent
+            transform: rotate(45deg)
+      &-active
+         background-color: #f2f2f2
+
+   &__option
+      position: absolute
+      width: 900px
+      top: 84px
+      left: 150px
+      display: flex
+      justify-content: space-between
+      flex-wrap: wrap
+      align-items: center
+      padding: 15px
+      background-color: #f2f2f2
+
+   &__dropdown
+      display: flex
+      justify-content: flex-start
+      width: 48%
+      border-bottom: 2px solid #fff
+
+      
+.rent
+   display: none
+   &__item
+
+   &__img
+      width: 60px
+      margin-right: 15px
+
+   &__text, &__price
+      margin: auto 0
+
+   &__text
+      width: 200px
+      margin-right: 15px
+      +ubuntu-m
+      a
+         color: #000
+         transition: 0.3s
+         &:hover
+            color: $accent
+            transition: 0.2s
+
+   &__price
+      text-align: left
+      +roboto
+      
+.service
+   display: none
+   &__item
+      padding: 10px 0
+   &__img
+      margin-right: 15px
+   &__text
+      display: flex
+      margin: auto 0
+      +ubuntu-m
+      a
+         color: #000
+         transition: 0.3s
+         &:hover
+            color: $accent
+            transition: 0.2s
+
+@media (max-width: 1200px)
+   .header
+      &__logo
+         width: 320px
+         margin-right: 40px
+
+   .menu
+      &__option
+         left: 0px
+
+@media (max-width: 992px)
+   .header
+      &__top
+         flex-wrap: wrap
+         justify-content: center
+      &__logo
+         width: 400px
+         margin-right: 60px
+      &__menu
+         order: 100
+         width: 90%
+      &__contact
+         display: block
+      &__phone
+         font-size: 34px
+      &__subtext
+         font-size: 14px
+
+   .menu
+      &__option
+         top: 145px
+         left: -15px
+         width: 100%
+
+   .rent
+      &__item
+         width: 49%
+      &__img
+         width: 50px
+      &__text, &__price
+         font-size: 14px
+   
+      
+@media (max-width: 768px)
+   .header
+      &__logo
+         width: 300px
+         margin-right: 20px
+      &__phone
+         font-size: 26px
+      &__subtext
+         display: none
+
+   .menu
+      width: 100%
+      &__item
+         font-size: 14px
+         text-align: center
+         padding: 20px10px
+         &_select
+            padding-right: 30px
+      &__option
+         width: 100%
+         left: -15px
+         top: 125px
+         align-items: stretch
+
+   .rent
+      &__item
+         width: 49%
+         flex-direction: column
+         align-items: center
+         padding: 5px 0
+      &__img
+         width: 70px
+         margin: 0
+      &__text, &__price
+         display: block
+         margin: 5px
+         text-align: center
+         font-size: 14px
+
+
+
+@media (max-width: 576px)
+   .header
+      &__logo
+         width: 220px
+      &__phone
+         font-size: 22px
+
+   .menu
+      flex-direction: column
+      margin-top: 10px
+      &__item
+         display: block
+         width: 100%
+         padding: 10px
+         background-color: #e4e4e4
+         &_select
+            &:after
+               display: none
+         &:nth-child(odd)
+            background-color: #f5f5f5
+      &__option
+         width: calc(100% - 10px)
+         top: 100px
+         left: -10px
+
+   .rent
+      &__item
+         width: 49%
+         flex-direction: column
+         align-items: center
+         padding: 5px 0
+      &__img
+         width: 70px
+         margin: 0
+      &__text, &__price
+         display: block
+         margin: 5px
+         text-align: center
+         font-size: 14px
+   
+   .service
+      top: 137px
+      &__text
+         font-size: 14px
+
+@media (max-width: 480px)
+   .header
+      &__logo
+         width: 250px
+         margin: 10px
+      &__phone
+         margin: 10px
+         font-size: 26px
+   .menu
+      &__option
+      top: 175px
+
+   .rent
+      &__img
+         width: 60px
+      &__text, &__price
+         text-align: center
+         font-size: 14px
+      &__text 
+         padding: 5px
+         width: 150px
+   
+   .service
+      top: 209px
