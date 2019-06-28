@@ -33,6 +33,20 @@
    font-style: normal;
 }
 
+@font-face {
+   font-family: 'Ubuntu Medium Italic';
+   src: url('../fonts/Ubuntu-MediumItalic.woff') format('woff');
+   font-weight: normal;
+   font-style: normal;
+}
+
+@font-face {
+   font-family: 'Ubuntu Bold Italic';
+   src: url('../fonts/Ubuntu-BoldItalic.woff') format('woff');
+   font-weight: normal;
+   font-style: normal;
+}
+
 
 @mixin ubuntu {
    font-family: 'Ubuntu Regular', sans-serif;
@@ -42,8 +56,16 @@
    font-family: 'Ubuntu Medium', sans-serif;
 }
 
+@mixin ubuntu-m-i {
+   font-family: 'Ubuntu Medium Italic', sans-serif;
+}
+
 @mixin ubuntu-bold {
    font-family: 'Ubuntu Bold', sans-serif;
+}
+
+@mixin ubuntu-bold-i {
+   font-family: 'Ubuntu Bold Italic', sans-serif;
 }
 
 @mixin roboto-c-bold {

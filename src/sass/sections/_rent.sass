@@ -1,0 +1,136 @@
+.info
+   padding: 50px 20px
+   &__block
+      position: relative
+      +row-flex()
+      align-items: center
+   &__title
+      +col()
+      +size(4)
+
+      padding: 30px
+      color: #000000
+      +ubuntu-bold-i
+      font-size: 28px
+      letter-spacing: -1px
+      line-height: 0.96
+      &:before
+         +pseudo
+         width: 31%
+         height: 86%
+         top: 24px
+         left: -12px
+         z-index: -5
+
+         background-color: $accent
+         transform: skew(-18deg)
+
+   &__text
+      +col()
+      +size(8)
+
+      padding: 35px 0
+      padding-left: 23px
+      color: #333333
+      +roboto
+      font-size: 16px
+      letter-spacing: -0.14px
+      line-height: 1.65
+
+      &:before
+         +pseudo
+         width: 80%
+         height: 97%
+         top: 3px
+         left: 280px
+         z-index: -10
+
+         background-color: #ecedee
+         opacity: 0.5
+         transform: skew(-18deg)
+
+/* ========================== MEDIA QUERIES ============================= */
+
+@media (max-width: 1420px)
+   .info
+      &__title
+         padding-left: 50px
+         font-size: 24px
+         &:before
+            width: 27%
+            left: 30px
+      &__text
+         padding-right: 50px
+         letter-spacing: -0.5px
+         &:before
+            width: 73%
+         
+@media (max-width: 1200px)
+   .info
+      &__title
+         +size(8)
+         +shift(2)
+         padding: 0
+         text-align: center
+         &:before
+            width: 80%
+            height: 100px
+            left: 10%
+            top: 3%
+
+      &__text
+         +size(8)
+         +shift(2)
+         padding: 0
+         padding-top: 20px
+         font-size: 18px
+         text-align: justify
+         letter-spacing: normal
+         &:before
+            display: none
+
+@media (max-width: 992px)
+   .info
+      &__title
+         +size(10)
+         +shift(1)
+         &:before
+            width: 90%
+            height: 110px
+            left: 5%
+            top: 0
+      
+      &__text
+         +size(10)
+         +shift(1)
+
+@media (max-width: 768px)
+   .info
+      &__title
+         font-size: 21px
+         &:before
+            top: 7px
+      
+      &__text
+         +size(12)
+         +shift(0)
+
+@media (max-width: 480px)
+   .info
+      &__title
+         font-size: 19px
+         &:before
+            top: 0px
+      
+      &__text
+         font-size: 16px
+
+@media (max-width: 420px)
+   .info
+      &__title
+         +size(11)
+         +shift(0.5)
+         font-size: 18px
+         &:before
+            top: 8px
+ 
