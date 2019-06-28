@@ -1,0 +1,106 @@
+.popular
+   $gap: 14px
+   &__title
+      margin-bottom: 23px
+      color: #497db9
+      +ubuntu-bold
+      font-size: 22px
+   &__items
+      +row-flex()
+      justify-content: center
+   &__item
+      +col()
+      +size(6)
+
+      display: flex
+      flex-wrap: wrap
+      justify-content: center
+      margin-bottom: 30px
+      padding: 0 28px
+      padding-bottom: 30px
+      background-color: #fafafa
+      text-align: center
+      background: repeating-linear-gradient(-45deg, $accent, $accent 20px, $dark 20px, $dark 40px) no-repeat
+      background-color: #fbfafa
+      background-size: 100% 1%
+      background-position-y: bottom
+   &__img
+      font-size: 0
+   &__about
+      display: flex
+      width: 100%
+      margin-top: 16px
+   &__props
+      flex-basis: 50%
+      margin-right: $gap
+   &__prop
+      display: flex
+      justify-content: space-between
+      margin: 12px 0
+      font-size: 15px
+   &__name
+      color: #505458
+      +ubuntu
+   &__value
+      +ubuntu-m
+      border-bottom: 1px solid $accent
+   &__price
+      display: flex
+      flex-wrap: wrap
+      justify-content: space-between
+      flex-basis: 50%
+      margin-left: $gap
+      &-block
+         flex-basis: 48%
+         margin: 4px 0
+         padding-top: 9px
+         background-color: #fff
+      &-number
+         display: block
+         color: #f2a220
+         +ubuntu-bold
+         font-size: 22px
+
+      &-text
+         color: #66696c
+         +ubuntu
+         font-size: 14px
+
+   &__button
+      align-self: center
+
+/* ========================== MEDIA QUERIES ============================= */
+
+@media (max-width: 1420px)
+   .popular
+      &__prop
+         font-size: 14px
+
+@media (max-width: 1200px)
+   .popular
+      &__about
+         display: block
+      &__props
+         margin: 0
+      &__prop
+         font-size: 16px
+      &__price
+         margin: 0
+         &-block
+            padding: 10px 0
+      &__button
+         margin-top: 10px
+         flex-grow: 1
+
+@media (max-width: 768px)
+   .popular
+      &__item
+         +size(10)
+         margin-left: 0
+         margin-right: 0
+         padding: 0 15px 20px
+
+@media (max-width: 576px)
+   .popular
+      &__item
+         +size(12)
