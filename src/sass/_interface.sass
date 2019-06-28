@@ -35,3 +35,29 @@ button
    font-size: 20px
    line-height: 26px
    cursor: pointer
+
+.title-orange
+   background: repeating-linear-gradient(-70deg, transparent, transparent 20%, $accent 20%, $accent 80%)
+
+
+@media (max-width: 1200px)
+   .title-orange
+      background: repeating-linear-gradient(-70deg, transparent, transparent 10%, $accent 10%, $accent 90%)
+
+@media (max-width: 992px)
+   h2 
+      font-size: 34px
+
+@media (max-width: 768px)
+   h2 
+      font-size: 30px
+  
+@media (max-width: 576px)
+   h2 
+      font-size: 26px 
+   .title-orange
+      background: repeating-linear-gradient(-70deg, transparent, transparent 7%, $accent 7%, $accent 93%)
+
+@media (max-width: 480px)
+   .title-orange
+      background: $accent

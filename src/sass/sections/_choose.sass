@@ -1,0 +1,86 @@
+.choose
+   &__title
+      padding: 14px 0
+      color: #fff
+      background: repeating-linear-gradient(-70deg, transparent, transparent 20%, $accent 20%, $accent 80%)
+
+   &__list
+      +row-flex
+      justify-content: center
+      padding: 15px 0
+
+   &__item
+      position: relative
+      +col()
+      +size(3.8)
+      margin-top: 15px
+      margin-bottom: 15px
+      background-color: #fff
+      &_weight
+         &:before
+            +pseudo
+            content: attr(data-weight)
+            left: 47%
+            top: 53px
+            +ubuntu-bold
+            font-size: 23px
+            text-align: center
+            color: #fff
+            border-bottom: 30px solid #ff984c
+            border-left: 20px solid transparent
+            border-right: 20px solid transparent
+            height: 0
+            width: 40px
+
+   &__link-wrap
+      padding: 20px 10px
+
+   &__img
+      display: block
+      margin: 0 auto
+      max-height: 100px
+   &__name
+      display: block
+      margin-top: 14px
+      text-align: center
+      +ubuntu-bold
+      color: #474c50
+      font-size: 19px
+   &__price
+      display: block
+      margin-top: 5px
+      text-align: center
+      color: $accent
+      +ubuntu
+      font-size: 17px
+
+/* ========================== MEDIA QUERIES ============================= */
+
+@media (max-width: 1200px)
+   .choose
+      &__title
+          background: repeating-linear-gradient(-70deg, transparent, transparent 10%, $accent 10%, $accent 90%)
+
+@media (max-width: 768px)
+   .choose
+      &__list
+         background-color: $dark
+      &__item
+         +size(6)
+         &:nth-child(3n)
+            flex-basis: 100%
+         margin-top: 8px
+         margin-bottom: 8px
+      
+
+@media (max-width: 576px)
+   .choose
+      &__title
+          background: repeating-linear-gradient(-70deg, transparent, transparent 5%, $accent 5%, $accent 95%)
+
+@media (max-width: 480px)
+   .choose
+      &__title
+          background: $accent
+      &__item
+         +size(12)
