@@ -1,0 +1,58 @@
+.steps
+   &__list
+      +row-flex()
+      justify-content: space-between
+   &__item
+      +col()
+      +size(2)
+      padding: 20px 5px
+      border-radius: 5px
+      text-align: center
+      transition: transform 0.2s
+      &:hover
+         background-color: $dark
+         transform: scale(1.2)
+         transition: transform 0.3s
+         .steps__text
+            color: #fff
+   &__img
+      width: 70%
+      margin-bottom: 20px
+      background: #f4f0e9
+      border-radius: 8px
+   &__text
+      color: #474c50
+      +ubuntu-bold
+      font-size: 16px
+      letter-spacing: -0.64px
+
+/* ========================== MEDIA QUERIES ============================= */
+
+@media (max-width: 992px)
+   .steps
+      &__item
+         +size(4)
+         &:hover
+            background: none
+            transform: scale(1)
+            .steps__text
+               color: #474c50
+      &__img
+         width: 50%
+
+@media (max-width: 768px)
+   .steps
+      &__list
+         justify-content: center
+      &__item
+         +size(5)
+
+@media (max-width: 480px)
+   .steps
+      &__list
+         justify-content: center
+      &__item
+         +size(10)
+      &__img
+         width: 25%
+
