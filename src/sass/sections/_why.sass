@@ -1,0 +1,129 @@
+.why
+   padding-top: 30px
+   padding-bottom: 30px
+   &-and-photo
+      background: url('../img/photo/bg.png') no-repeat center top
+      background-size: contain 100%
+   &__list
+      +row-flex()
+      justify-content: center
+      padding: 10px
+   &__item
+      +col()
+      +size(5)
+      display: flex
+      align-items: center
+      margin: 0
+      margin-right: 11px
+      margin-left: 11px
+      margin-bottom: 19px
+      &_odd
+         justify-content: flex-end
+         text-align: right
+      &_first
+         margin-left: 43px
+      &_last
+         margin-right: 43px
+   &__img
+      width: 60px
+      height: 60px
+      padding: 15px
+      transform: skew(-17deg)
+      background: $accent
+      img 
+         transform: skew(17deg) 
+      &_odd
+         // margin-left: 26px
+         order: 2
+      &_even
+         // margin-right: 21px
+
+   &__text
+      display: flex
+      align-items: center
+      height: 60px
+      padding: 5px
+      flex-grow: 1
+      color: #000000
+      +ubuntu-bold
+      font-size: 19px
+      background-color: #fff
+      transform: skew(-17deg)
+      span
+         display: inline-block
+         vertical-align: middle
+         // height: 100%
+         transform: skew(17deg) 
+
+      &_odd
+         justify-content: flex-end
+         padding-right: 20px
+      &_even
+         padding-left: 20px
+
+/* ========================== MEDIA QUERIES ============================= */
+
+@media (max-width: 1200px)
+   .why
+      &__item
+         margin: 0
+         margin-right: 6px
+         margin-left: 6px
+         margin-bottom: 10px
+         &_first
+            margin-left: 35px
+         &_last
+            margin-right: 35px
+
+@media (max-width: 992px)
+   .why
+      &__list
+         padding: 30px
+      &__item
+         +size(6)
+      &__img
+         width: 50px
+         height: 50px
+      &__text
+         max-width: 60%
+         font-size: 17px
+
+@media (max-width: 768px)
+   .why
+      &__list
+         padding: 0
+      &__item
+         +size(10)
+         margin: 0
+      &__img
+         width: 40px
+         height: 40px
+      &__text
+         max-width: 60%
+         height: 50px
+         font-size: 19px
+
+@media (max-width: 768px)
+   .why
+      &__text
+         height: 45px
+         font-size: 17px
+
+@media (max-width: 480px)
+   .why
+      &__item
+         +size(11)
+
+      &__text
+         min-width: 70%
+         font-size: 16px
+
+@media (max-width: 420px)
+   .why
+      &__img
+         width: 30px
+         height: 30px
+      &__text
+         max-width: 60%
+         height: 40px
+

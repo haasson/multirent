@@ -93,7 +93,7 @@ function watch() {
       })
    }
 
-   gulp.watch('./src/sass/**/*.sass', styles);
+   gulp.watch('./src/sass/**/*.+(sass|scss)', styles);
    gulp.watch('./src/img/**/*', img);
    gulp.watch('./src/js/**/*.js', scripts);
    gulp.watch('./src/*.html', html);
