@@ -49,6 +49,12 @@ function img() {
               .pipe(gulpif(!isSync, browserSync.stream()));
 }
 
+function video() {
+   return gulp.src('./src/video/*')
+              .pipe(gulp.dest('./build/video'))
+              .pipe(gulpif(!isSync, browserSync.stream()));
+}
+
 function fonts() {
    return gulp.src('./src/fonts/*')
               .pipe(gulp.dest('./build/fonts'))
@@ -95,6 +101,7 @@ function watch() {
 
    gulp.watch('./src/sass/**/*.+(sass|scss)', styles);
    gulp.watch('./src/img/**/*', img);
+   gulp.watch('./src/video/**/*', video);
    gulp.watch('./src/js/**/*.js', scripts);
    gulp.watch('./src/*.html', html);
    gulp.watch('./src/fonts/**/*', fonts);
@@ -107,7 +114,7 @@ function clean() {
 
 let build = gulp.series(
    clean, 
-   gulp.parallel(styles, img, scripts, html, fonts)
+   gulp.parallel(styles, img, video, scripts, html, fonts)
 )
    
 gulp.task('del', clean);

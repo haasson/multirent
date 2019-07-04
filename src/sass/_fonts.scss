@@ -47,6 +47,27 @@
    font-style: normal;
 }
 
+@font-face {
+   font-family: 'Open Sans Regular';
+   src: url('../fonts/OpenSans-Regular.woff') format('woff');
+   font-weight: normal;
+   font-style: normal;
+}
+
+@font-face {
+   font-family: 'Open Sans Semibold';
+   src: url('../fonts/OpenSans-SemiBold.woff') format('woff');
+   font-weight: normal;
+   font-style: normal;
+}
+
+@font-face {
+   font-family: 'Open Sans Bold';
+   src: url('../fonts/OpenSans-Bold.woff') format('woff');
+   font-weight: normal;
+   font-style: normal;
+}
+
 
 @mixin ubuntu {
    font-family: 'Ubuntu Regular', sans-serif;
@@ -74,4 +95,16 @@
 
 @mixin roboto {
    font-family: 'Roboto Regular', sans-serif;
+}
+
+@mixin opensans {
+   font-family: 'Open Sans Regular', sans-serif;
+}
+
+@mixin opensans-sb {
+   font-family: 'Open Sans Semibold', sans-serif;
+}
+
+@mixin opensans-b {
+   font-family: 'Open Sans Bold', sans-serif;
 }
