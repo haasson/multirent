@@ -1,0 +1,76 @@
+.footer
+   padding: 50px 0
+   background: #2c3948
+   &__wrap
+      display: flex
+      justify-content: space-between
+   &__logo
+      min-width: 230px
+      padding-right: 30px
+      &-text
+         display: block
+         margin-top: 25px
+         +ubuntu
+         color: #d6d6d6
+         font-size: 13px
+
+
+   &__list
+      +row-flex()
+      justify-content: space-between
+      flex-grow: 1
+
+   &__item
+      +col()
+      +size(3)
+      color: #c8ced6
+      +ubuntu
+      font-size: 14px
+      line-height: 26px
+
+   &__title
+      margin: 0
+      margin-bottom: 15px
+      +ubuntu-bold
+      color: #ffffff
+      font-size: 22px
+
+   &__link
+      display: block 
+      &:hover
+         text-decoration: underline
+
+   &__accent
+      color: $accent
+
+@media (max-width: 1200px)
+   .footer
+      &__logo
+         min-width: 180px
+      &__title
+         font-size: 21px
+         
+@media (max-width: 992px)
+   .footer
+      &__item
+         +size(6)
+         margin-bottom: 30px
+      &__title
+         margin-bottom: 10px
+                  
+@media (max-width: 768px)
+   .footer
+      padding: 30px
+      &__wrap
+         flex-direction: column
+      &__logo
+         align-self: center
+         text-align: center
+         margin-bottom: 30px
+         width: 250px
+
+@media (max-width: 480px)
+   .footer
+      &__item
+         +size(12)
+         text-align: center
