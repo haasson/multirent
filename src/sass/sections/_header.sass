@@ -30,6 +30,7 @@
       font-size: 16px
       text-transform: uppercase
       transition: 0.3s
+      cursor: pointer
       &:hover
          color: $accent
          transition: 0.2s
@@ -53,6 +54,7 @@
 
    &__option
       position: absolute
+      z-index: 100
       width: 900px
       top: 84px
       left: 150px
@@ -62,6 +64,11 @@
       align-items: center
       padding: 15px
       background-color: #f2f2f2
+      transition: transform 0.2s
+      transform-origin: top
+      transform: scale(1, 1)
+      &-hidden
+         transform: scale(1, 0)
 
    &__dropdown
       display: flex
@@ -71,9 +78,7 @@
 
       
 .rent
-   display: none
-   &__item
-
+   
    &__img
       width: 60px
       margin-right: 15px
@@ -97,7 +102,6 @@
       +roboto
       
 .service
-   display: none
    &__item
       padding: 10px 0
    &__img
@@ -254,11 +258,9 @@
       &__phone
          margin: 10px
          font-size: 26px
-   .menu
-      &__option
-      top: 175px
 
    .rent
+      top: 175px
       &__img
          width: 60px
       &__text, &__price

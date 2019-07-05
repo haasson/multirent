@@ -9,7 +9,7 @@ $(document).ready(function () {
 
    $('.popup-with-form').magnificPopup({
       type: 'inline',
-      preloader: false,
+      preloader: true,
       focus: '#name',
 
       // When elemened is focused, some mobile browsers in some cases zoom in
@@ -24,7 +24,86 @@ $(document).ready(function () {
          }
       }
    });
+
+   $('.popup-gallery').magnificPopup({
+      delegate: 'a',
+      type: 'image',
+      tLoading: 'Loading image #%curr%...',
+      mainClass: 'mfp-img-mobile',
+      gallery: {
+         enabled: true,
+         navigateByImgClick: true,
+         preload: [0, 1] // Will preload 0 - before current, and 1 after the current image
+      },
+      image: {
+         tError: '<a href="%url%">The image #%curr%</a> could not be loaded.',
+      }
+   });
 });
+
+// Выпадающие меню в шапке
+
+let dropdownBtns = document.querySelectorAll('.menu__item_select');
+let dropdownMenus = document.querySelectorAll('.menu__option');
+
+// По клику прячем все списки, кроме того, на котором был клик
+
+for (let i = 0; i < dropdownBtns.length; i++) {
+   dropdownBtns[i].addEventListener('click', function (e) {
+      for (let j = 0; j < dropdownMenus.length; j++) {
+         if (i !== j) {
+            dropdownMenus[j].classList.add('menu__option-hidden');
+         }
+      }
+      dropdownMenus[i].classList.toggle('menu__option-hidden');
+   })
+   
+}
+
+// По клику вне выпадающего списка и вне кнопок меню прячем открытый список
+
+let flag = 0;
+
+document.addEventListener('click', function (e) {
+   for (let i = 0; i < dropdownMenus.length; i++) {
+      if (!dropdownMenus[i].classList.contains('menu__option-hidden')) {
+         flag = i;
+         break;
+      } ;
+   }
+   if (!e.target.classList.contains('menu__item_select') && !dropdownMenus[flag].contains(e.target)) {
+      dropdownMenus[flag].classList.add('menu__option-hidden')
+   }   
+})
+
+
+
+
+// let menuRent = document.querySelector('#menu-rent');
+// let menuRentPopup = document.querySelector('#rent-popup');
+
+// let menuService = document.querySelector('#menu-service');
+// let menuServicePopup = document.querySelector('#service-popup');
+
+// function toggleMenu (item) {
+//    item.classList.toggle('menu__option-hidden')
+// }
+
+// menuRent.addEventListener('click', function (e) {
+//    e.preventDefault();
+//    e.stopPropagation();
+//    toggleMenu(menuRentPopup);
+   
+// })
+
+// menuService.addEventListener('click', function (e) {
+//    e.preventDefault();
+//    e.stopPropagation();
+//    toggleMenu(menuServicePopup)
+// })
+
+
+
 
 
 function Calendar2(id, year, month) {

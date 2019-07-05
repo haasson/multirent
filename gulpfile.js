@@ -36,7 +36,7 @@ function styles() {
               .pipe(gulpif(isProd, cleanCSS({
                  level: 2
               })))
-              .pipe(gulpif(isDev,sourcemaps.write()))
+              .pipe(gulpif(isDev, sourcemaps.write()))
               .pipe(gulp.dest('./build/css/'))
               .pipe(gulpif(!isSync, browserSync.stream()));
 }
@@ -78,7 +78,7 @@ function scripts() {
               .pipe(uglify({
                  toplevel: true
               }))
-              .pipe(gulpif(isDev, sourcemaps.write('./maps/')))
+              .pipe(gulpif(isDev, sourcemaps.write()))
               .pipe(gulp.dest('./build/js'))
               .pipe(gulpif(!isSync, browserSync.stream()));
 }

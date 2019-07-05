@@ -13,8 +13,8 @@
    <div class="topline">
       <div class="wrapper">
          <div class="topline__items">
-            <button href="#form-quick-order" class="topline__item topline__button  popup-with-form"> <img class="topline__img" src="img/topline/1.png">
-               <p class="topline__text popup-with-form">
+            <button href="#form-quick-order" class="topline__item topline__button popup-with-form"> <img class="topline__img" src="img/topline/1.png">
+               <p class="topline__text">
                   Сделай быстрый заказ
                </p>
             </button>
@@ -84,8 +84,8 @@
          <div class="header__top">
             <img src="img/header/logo.png" alt="" class="header__logo">
             <nav class="header__menu menu">
-               <a href="" class="menu__item menu__item_select" id="menu__rent">Аренда техники</a>
-               <a href="" class="menu__item menu__item_select" id="menu__service">Услуги</a>
+               <span href="" class="menu__item menu__item_select" id="menu-rent">Аренда техники</span>
+               <span href="" class="menu__item menu__item_select" id="menu-service">Услуги</span>
                <a href="" class="menu__item">Цены</a>
                <a href="" class="menu__item">Оплата</a>
                <a href="" class="menu__item">Контакты</a>
@@ -94,7 +94,7 @@
                <a class="topline__phone header__phone" href=”tel:+79998887766”>+7 (495) 784-8303</a>
                <p class="topline__subtext header__subtext">заявки принимаются с 7:00 до 24:00</p>
             </div>
-            <div class="menu__option rent">
+            <div class="menu__option rent menu__option-hidden" id="rent-popup">
                <div class="rent__item menu__dropdown">
                   <div class="rent__img"><img src="img/header/menu/1.png" alt=""></div>
                   <div class="rent__text"><a href="">Аренда манипулятора 23324</a></div>
@@ -156,7 +156,7 @@
                   <div class="rent__price">от 770 руб/час</div>
                </div>
             </div>
-            <div class="menu__option service">
+            <div class="menu__option service menu__option-hidden" id="service-popup">
                <div class="service__item menu__dropdown">
                   <div class="service__img"><img src="img/header/menu/crane.png" alt=""></div>
                   <div class="service__text"><a href="">Перевозка техники</a></div>
@@ -378,7 +378,7 @@
                         <span class="popular__price-number">30 000</span>
                         <span class="popular__price-text">руб./смена</span>
                      </div>
-                     <button class="popular__button">Арендовать</button>
+                     <button href="#form-rent" class="popular__button popup-with-form">Арендовать</button>
                   </div>
                </div>
             </div>
@@ -415,7 +415,7 @@
                         <span class="popular__price-number">30 000</span>
                         <span class="popular__price-text">руб./смена</span>
                      </div>
-                     <button class="popular__button">Арендовать</button>
+                     <button href="#form-rent" class="popular__button popup-with-form">Арендовать</button>
                   </div>
                </div>
             </div>
@@ -452,7 +452,7 @@
                         <span class="popular__price-number">30 000</span>
                         <span class="popular__price-text">руб./смена</span>
                      </div>
-                     <button class="popular__button">Арендовать</button>
+                     <button href="#form-rent" class="popular__button popup-with-form">Арендовать</button>
                   </div>
                </div>
             </div>
@@ -489,11 +489,28 @@
                         <span class="popular__price-number">30 000</span>
                         <span class="popular__price-text">руб./смена</span>
                      </div>
-                     <button class="popular__button">Арендовать</button>
+                     <button href="#form-rent" class="popular__button popup-with-form">Арендовать</button>
                   </div>
                </div>
             </div>
          </div>
+
+         <form id="form-rent" class="f-order f-popup mfp-hide popup-block">
+            <div class="f-popup__line">
+               <label for="f-popup-phone" class="f-popup__label">Телефон:</label>
+               <input type="text" id="f-order-phone" class="f-popup__input">
+            </div>
+            <div class="f-popup__line">
+               <label for="f-popup-date" class="f-popup__label">Дата подачи</label>
+               <input type="text" id="f-order-date" class="f-popup__input">
+            </div>
+            <p class="f-popup__text">
+               При заказе подачи транспорта после 15:00 – <span class="f-popup__text_accent">скидка 20%</span>
+            </p>
+            <input type="submit" value="Оформить заказ" class="f-popup__submit btn-submit">
+            <p class="f-popup__agreement">Нажимая кнопку «Оформить заказ», вы соглашаетесь на обработку ваших персональных данных
+            </p>
+         </form>
 
          <h2 class="choose__title">Выберите вид манипулятора</h2>
          <div class="choose__list">
@@ -711,31 +728,31 @@
       <div class="photo">
          <div class="wrapper">
             <h2 class="photo__title">Фото работ</h2>
-            <div class="photo__list">
-               <div class="photo__item">
+            <div class="photo__list popup-gallery">
+               <a href="img/photo/1.png" class="photo__item">
                   <img src="img/photo/1.png" alt="">
                   <i class="icon-search-1"></i>
-               </div>
-               <div class="photo__item">
+               </a>
+               <a href="img/photo/2.png" class="photo__item">
                   <img src="img/photo/2.png" alt="">
                   <i class="icon-search-1"></i>
-               </div>
-               <div class="photo__item">
+               </a>
+               <a href="img/photo/3.png" class="photo__item">
                   <img src="img/photo/3.png" alt="">
                   <i class="icon-search-1"></i>
-               </div>
-               <div class="photo__item">
+               </a>
+               <a href="img/photo/4.png" class="photo__item">
                   <img src="img/photo/4.png" alt="">
                   <i class="icon-search-1"></i>
-               </div>
-               <div class="photo__item">
+               </a>
+               <a href="img/photo/5.png" class="photo__item">
                   <img src="img/photo/5.png" alt="">
                   <i class="icon-search-1"></i>
-               </div>
-               <div class="photo__item">
+               </a>
+               <a href="img/photo/6.png" class="photo__item">
                   <img src="img/photo/6.png" alt="">
                   <i class="icon-search-1"></i>
-               </div>
+               </a>
             </div>
          </div>
       </div>
