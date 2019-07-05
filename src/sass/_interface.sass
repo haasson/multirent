@@ -36,12 +36,66 @@ button
    color: #ffffff
    +ubuntu-bold
    font-size: 20px
-   line-height: 26px
    cursor: pointer
 
 
+.popup-block
+   position: relative
+   max-width: 400px
+   margin: 0 auto
+   background-color: #fff
+   padding: 25px
+
+.f-popup
+   text-align: right
+   padding: 50px 70px 50px 200px
+   background: #fff url('../img/topline/bg.png') no-repeat left bottom
+   &__line
+      margin-bottom: 20px
+   &__label
+      color: #333
+      +ubuntu
+   &__input
+      display: inline-block
+      width: 60%
+      margin-left: 20px
+      padding: 10px
+      outline: none
+      border: 1px solid #d5d5d5
+   &__text
+      margin-bottom: 30px
+      +ubuntu-m
+      font-size: 22px
+      text-align: center
+      &_accent
+         color: tomato
+   &__submit
+      margin-bottom: 40px
+   &__agreement
+      +ubuntu
+      font-size: 12px
+      text-align: center
+
+.btn-submit
+   display: block
+   padding: 14px 5px
+   width: 100%
+   +opensans-b
+   color: #ffffff
+   font-size: 22px
+   border: none
+   background-color: $accent
+   cursor: pointer
+   outline: none
+   transition: background-color 0.2s
+   &:hover
+      background-color: darken($accent, 10%)
+
 .title-orange
    background: repeating-linear-gradient(-70deg, transparent, transparent 20%, $accent 20%, $accent 80%)
+
+
+
 
 
 @media (max-width: 1200px)
@@ -55,6 +109,10 @@ button
 @media (max-width: 768px)
    h2 
       font-size: 30px
+   .f-popup
+      padding: 40px
+      background: #fff
+
   
 @media (max-width: 576px)
    h2 
@@ -65,3 +123,11 @@ button
 @media (max-width: 480px)
    .title-orange
       background: $accent
+   .f-popup
+      text-align: left
+      &__input
+         display: block
+         width: 100%
+         margin: 0
+         margin-top: 10px
+         box-sizing: border-box

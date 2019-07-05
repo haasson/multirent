@@ -13,17 +13,17 @@
    <div class="topline">
       <div class="wrapper">
          <div class="topline__items">
-            <button class="topline__item topline__button"> <img class="topline__img" src="img/topline/1.png">
-               <p class="topline__text">
+            <button href="#form-quick-order" class="topline__item topline__button  popup-with-form"> <img class="topline__img" src="img/topline/1.png">
+               <p class="topline__text popup-with-form">
                   Сделай быстрый заказ
                </p>
             </button>
-            <button class="topline__item topline__button"> <img class="topline__img" src="img/topline/2.png">
+            <button href="#form-callback" class="topline__item topline__button  popup-with-form"> <img class="topline__img" src="img/topline/2.png">
                <p class="topline__text">
                   Заказать звонок
                </p>
             </button>
-            <button class="topline__item topline__button"> <img class="topline__img" src="img/topline/3.png">
+            <button href="#" class="topline__item topline__button"> <img class="topline__img" src="img/topline/3.png">
                <p class="topline__text">
                   Калькулятор аренды
                </p>
@@ -33,6 +33,49 @@
                <p class="topline__subtext">заявки принимаются с 7:00 до 24:00</p>
             </div>
          </div>
+
+         <form id="form-quick-order" class="f-order f-popup mfp-hide popup-block">
+            <div class="f-popup__line">
+               <label for="f-popup-phone" class="f-popup__label">Телефон:</label>
+               <input type="text" id="f-order-phone" class="f-popup__input">
+            </div>
+            <div class="f-popup__line">
+               <label for="f-popup-date" class="f-popup__label">Дата подачи</label>
+               <input type="text" id="f-order-date" class="f-popup__input">
+            </div>
+            <p class="f-popup__text">
+               При заказе подачи транспорта после 15:00 – <span class="f-popup__text_accent">скидка 20%</span>
+            </p>
+            <input type="submit" value="Оформить заказ" class="f-popup__submit btn-submit">
+            <p class="f-popup__agreement">Нажимая кнопку «Оформить заказ», вы соглашаетесь на обработку ваших персональных данных</p>
+         </form>
+
+         <form id="form-callback" class="f-callback f-popup mfp-hide popup-block">
+            <div class="f-popup__line">
+               <label for="f-popup-phone" class="f-popup__label">Телефон:</label>
+               <input type="text" id="f-callback-phone" class="f-popup__input">
+            </div>
+            <div class="f-popup__line">
+               <label for="f-popup-date" class="f-popup__label">Имя</label>
+               <input type="text" id="f-callback-name" class="f-popup__input">
+            </div>
+            <input type="submit" value="Заказать звонок" class="f-popup__submit btn-submit">
+            <p class="f-popup__agreement">Нажимая кнопку «Заказать звонок», вы соглашаетесь на обработку ваших персональных данных</p>
+         </form>
+
+         <form id="form-callback" class="f-order mfp-hide popup-block">
+            <div class="f-order__line">
+               <label for="f-order-phone" class="f-order__label">Телефон:</label>
+               <input type="text" id="f-callback-phone" class="f-order__input">
+            </div>
+            <div class="f-order__line">
+               <label for="f-order-date" class="f-order__label">Имя</label>
+               <input type="text" id="f-callback-name" class="f-order__input">
+            </div>
+            <input type="submit" value="Заказать звонок" class="f-order__submit btn-submit">
+            <p class="f-order__agreement">Нажимая кнопку «Заказать звонок», вы соглашаетесь на обработку ваших персональных данных</p>
+         </form>
+
       </div>
    </div>
 
@@ -804,7 +847,7 @@
                            <div class="choosing__caret"></div>
                         </div>
                         <input type="text" class="choosing__input_phone" name="phone" placeholder="Ваш телефон">
-                        <input type="submit" value="Заказать расчет" class="choosing__btn">
+                        <input type="submit" value="Заказать расчет" class="choosing__btn btn__submit">
                      </div>
                   </div>
 
