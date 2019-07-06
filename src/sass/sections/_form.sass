@@ -12,8 +12,6 @@
       border: 3px solid $accent
    &__content
       display: flex
-      overflow: visible
-      background: url('../img/form/bg.png') no-repeat
       background-size: cover
       padding: 40px 45px
 
@@ -100,7 +98,10 @@
 .choosing
    padding-left: 10px
    flex-basis: 41%
-   height: 500px
+   &__line
+      display: flex
+      align-items: flex-end
+      justify-content: space-between
    &__title
       margin-bottom: 25px
 
@@ -113,6 +114,7 @@
    &__select
       position: relative
       +ubuntu-m
+      cursor: pointer
       &_truck
          padding-bottom: 8px
          width: 100%
@@ -145,7 +147,8 @@
       
    &__input
       &_way
-         width: 90%
+         flex-basis: 50%
+         flex-grow: 1     
          margin-top: 24px
          padding: 0 5px
          padding-bottom: 8px
@@ -166,6 +169,19 @@
          border: none
          border-bottom: 1px solid #d5d5d5
          background-color: transparent
+         
+      &_hidden
+         display: none
+   &__symbol
+      display: inline-block
+      vertical-align: middle
+      &_del
+         cursor: pointer
+         transform: scale(1)
+         transition: transform .2s
+         &:hover
+            background-color: #fff
+            transform: scale(1.1)
 
    &__add
       display: inline-block
@@ -175,6 +191,9 @@
       color: #3c3c3c
       font-size: 16px
       border-bottom: 1px dashed #3c3c3c
+      transition: border-color .2s
+      &:hover
+         border-color: transparent
 
    &__renttime
       margin-top: 36px

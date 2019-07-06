@@ -764,7 +764,7 @@
             Видео о наших манипуляторах
          </h2>
          <div class="video__wrapper">
-            <video class="video__content" src="video/1.mp4" poster="img/video/1.png"
+            <video class="video__content" id="video-1" src="video/1.mp4" poster="img/video/1.png"
                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen
                controls></video>
             <div class="video__playbtn">
@@ -805,21 +805,21 @@
                         </div>
                         <div class="date__time time">
                            <div class="time__hour">
-                              <div class="time__hour-prev time__btn time__btn_next"></div>
+                              <div class="time__hour-next time__btn time__btn_next"></div>
                               <div class="time__hour-value">
-                                 <input class="time__value" type="text" value="14">
+                                 <span class="time__value" id="time-hour">12</span>
                               </div>
-                              <div class="time__hour-next time__btn time__btn_prev"></div>
+                              <div class="time__hour-prev time__btn time__btn_prev"></div>
                            </div>
                            <div class="time__symbol">
                               :
                            </div>
                            <div class="time__min">
-                              <div class="time__min-prev time__btn time__btn_next"></div>
+                              <div class="time__min-next time__btn time__btn_next"></div>
                               <div class="time__min-value">
-                                 <input class="time__value" type="text" value="20">
+                                 <span class="time__value" id="time-min">30</span>
                               </div>
-                              <div class="time__min-next time__btn time__btn_prev"></div>
+                              <div class="time__min-prev time__btn time__btn_prev"></div>
                            </div>
                         </div>
 
@@ -832,22 +832,24 @@
                      <div class="choosing__form">
                         <div class="choosing__select">
                            <select name="truck" id="truck" class="choosing__select_truck">
-                              <option value="1" class="choosing__option">Манипулятор 5 тонны</option>
-                              <option value="2"></option>
-                              <option value="3"></option>
-                              <option value="4"></option>
-                              <option value="5"></option>
-                              <option value="6"></option>
+                              <option value="1" class="choosing__option">Манипулятор 3 тонны</option>
+                              <option value="2">Манипулятор 5 тонны</option>
+                              <option value="3">Манипулятор 7 тонны</option>
+                              <option value="4">Манипулятор 10 тонны</option>
+                              <option value="5">Манипулятор-вездеход</option>
+                              <option value="6">Автокран</option>
                            </select>
                            <div class="choosing__caret"></div>
                         </div>
-                        <div class="choosing__line">
-                           <input type="text" name="from" placeholder="Откуда" class="choosing__input_way">
-                           <div class="choosing__symbol choosing__symbol_from"></div>
-                        </div>
-                        <div class="choosing__line">
-                           <input type="text" name="to1" placeholder="Куда" class="choosing__input_way">
-                           <div class="choosing__symbol choosing__symbol_to"></div>
+                        <div class="choosing__block-inputs">
+                           <div class="choosing__line">
+                              <input type="text" name="from" placeholder="Откуда" class="choosing__input_way">
+                              <div class="choosing__symbol choosing__symbol_from"><img src="img/form/from.png" alt=""></div>
+                           </div>
+                           <div class="choosing__line">
+                              <input type="text" name="to1" placeholder="Куда" class="choosing__input_way">
+                              <div class="choosing__symbol choosing__symbol_to"><img src="img/form/to.png" alt=""></div>
+                           </div>
                         </div>
                         <a href="#" class="choosing__add" id="add__address">
                            + добавить адрес
@@ -864,7 +866,9 @@
                            <div class="choosing__caret"></div>
                         </div>
                         <input type="text" class="choosing__input_phone" name="phone" placeholder="Ваш телефон">
-                        <input type="submit" value="Заказать расчет" class="choosing__btn btn__submit">
+                        <input type="text" name="day" class="choosing__input_hidden" id="form-day">
+                        <input type="text" name="time" class="choosing__input_hidden" id="form-time">
+                        <input type="submit" value="Заказать расчет" class="choosing__btn btn-submit">
                      </div>
                   </div>
 

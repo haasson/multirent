@@ -76,36 +76,47 @@ document.addEventListener('click', function (e) {
    }   
 })
 
+// Скрываем кнопку на видео по клику и запускаем видео
+
+let videoBtn = document.querySelector('.video__playbtn');
+let video = document.querySelector('#video-1');
+
+videoBtn.addEventListener('click', function () {
+   video.play();
+   videoBtn.style.display = 'none'
+})
 
 
 
-// let menuRent = document.querySelector('#menu-rent');
-// let menuRentPopup = document.querySelector('#rent-popup');
+// Добавляем пункт назначения в форме по клику
 
-// let menuService = document.querySelector('#menu-service');
-// let menuServicePopup = document.querySelector('#service-popup');
-
-// function toggleMenu (item) {
-//    item.classList.toggle('menu__option-hidden')
-// }
-
-// menuRent.addEventListener('click', function (e) {
-//    e.preventDefault();
-//    e.stopPropagation();
-//    toggleMenu(menuRentPopup);
-   
-// })
-
-// menuService.addEventListener('click', function (e) {
-//    e.preventDefault();
-//    e.stopPropagation();
-//    toggleMenu(menuServicePopup)
-// })
+let addBtn = document.querySelector('#add__address');
+let inputBox = document.querySelector('.choosing__block-inputs')
+let currentDest = 2;
+let del;
 
 
+addBtn.addEventListener('click', function (e) {
+   e.preventDefault();
+   currentDest++;
+   let newInputLine = document.createElement('div');
+   newInputLine.classList.add('choosing__line');
+   newInputLine.innerHTML = '<input type="text" name="to' + currentDest + '" placeholder="Куда" class="choosing__input_way"><div class="choosing__symbol choosing__symbol_del"><img src="img/form/to.png" alt=""></div>';
+   inputBox.appendChild(newInputLine);
+   del = document.querySelectorAll('.choosing__symbol_del');
+   delHandler();
+});
+
+function delHandler() {
+   del[del.length-1].addEventListener('click', function () {
+      this.parentNode.parentNode.removeChild(this.parentNode)
+   })
+}
 
 
+// Создаем календарь в форме
 
+let selectedDate;
 function Calendar2(id, year, month) {
    var Dlast = new Date(year, month + 1, 0).getDate(), // Получаем 0-й день следующего месяца от выбранного (=последний день выбранного месяца)
       D = new Date(year, month, Dlast), // Получаем полную дату последнего дня выбранного месяца
@@ -113,7 +124,7 @@ function Calendar2(id, year, month) {
       DNfirst = new Date(D.getFullYear(), D.getMonth(), 1).getDay(), // Какой по счёту день недели первый день месяца
       calendar = '<tr>',
       month = ["Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь"];
-      
+   selectedDate = D;
    // Заполняем пустыми ячейками календарь с понедельника до 1 числа месяца
    if (DNfirst != 0) {
       for (var i = 1; i < DNfirst; i++) calendar += '<td>';
@@ -153,18 +164,20 @@ function Calendar2(id, year, month) {
    for (let i = 0; i < days.length; i++) {
       todayChecker(days[i]);
    }
+   
 }
 
 
 function todayChecker(day) {
    day.addEventListener('click', function () {
-      let selected = document.querySelector('.selected');
+      
+   let selected = document.querySelector('.selected');
       if (selected != null) {
-         console.log(selected);
          
          selected.classList.remove('selected')
       }
-      this.classList.add('selected')
+      this.classList.add('selected');
+      document.querySelector('#form-day').value = this.innerText + '-' + (selectedDate.getMonth() + 1) + '-' + selectedDate.getFullYear()
    })
 }
 Calendar2("calendar2", new Date().getFullYear(), new Date().getMonth());
@@ -178,3 +191,89 @@ document.querySelector('#calendar2 thead tr:nth-child(1) td:nth-child(1)').oncli
 document.querySelector('#calendar2 thead tr:nth-child(1) td:nth-child(3)').onclick = function () {
    Calendar2("calendar2", document.querySelector('#calendar2 thead td:nth-child(2)').dataset.year, parseFloat(document.querySelector('#calendar2 thead td:nth-child(2)').dataset.month) + 1);
 }
+
+
+// Кнопки выбора времени в форме
+
+let timeBtn = document.querySelectorAll('.time__btn');
+let timeHour = document.querySelector('#time-hour');
+let timeMin = document.querySelector('#time-min');
+let timeHourValue = timeHour.innerText;
+let timeMinValue = timeMin.innerText;
+
+
+timeBtn.forEach(function (item) {
+   item.addEventListener('click', function (e) {
+   
+      if (e.target.classList.contains('time__hour-prev')) {
+
+         if (timeHourValue == 0) {
+            timeHourValue = 23;
+            timeHour.innerText = timeHourValue;
+         }
+         else if (timeHourValue <= 10) {
+            timeHourValue--;
+            timeHour.innerText = '0' + timeHourValue;
+         }
+         else {
+            timeHourValue--;
+            timeHour.innerText = timeHourValue; 
+         }
+      }
+   
+      else if (e.target.classList.contains('time__hour-next')) {
+
+         if (timeHourValue == 23) {
+            timeHourValue = 0;
+            timeHour.innerText = '0' + timeHourValue;;
+         }
+         else if (timeHourValue < 9) {
+            timeHourValue++;
+            timeHour.innerText = '0' + timeHourValue;
+         }
+         else {
+            timeHourValue++;
+            timeHour.innerText = timeHourValue; 
+         }
+      }
+
+      else if (e.target.classList.contains('time__min-prev')) {
+
+         if (timeMinValue == 0) {
+            timeMinValue = 59;
+            timeMin.innerText = timeMinValue;
+         }
+         else if (timeMinValue <= 10) {
+            timeMinValue--;
+            timeMin.innerText = '0' + timeMinValue;
+         }
+         else {
+            timeMinValue--;
+            timeMin.innerText = timeMinValue;
+         }
+      }
+
+      else if (e.target.classList.contains('time__min-next')) {
+
+         if (timeMinValue == 59) {
+            timeMinValue = 0;
+            timeMin.innerText = '0' + timeMinValue;;
+         }
+         else if (timeMinValue < 9) {
+            timeMinValue++;
+            timeMin.innerText = '0' + timeMinValue;
+         }
+         else {
+            timeMinValue++;
+            timeMin.innerText = timeMinValue;
+         }
+      }
+   
+      
+   });
+   item.addEventListener('mouseleave', function () {
+      document.querySelector('#form-time').value = timeHourValue + ':' + timeMinValue
+   })
+})
+
+
